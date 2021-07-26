@@ -10,9 +10,14 @@ class SurveyController extends Controller
     public function comment(Request $request){
         $request->validate([
             "name"=>"required",
-            "email"=>"required",
+            "email"=>"required|email",
             "phone"=>"required",
             "comment"=>"required"
+        ],[
+            "name.required"=>"Vui lòng nhập tên sinh viên",
+            "email.required"=>"Vui lòng nhập email sinh viên",
+            "phone.required"=>"Vui lòng nhập số điện thoại của sinh viên",
+            "comment.required"=>"Vui lòng nhập nhận xét : .!",
         ]);
         Comment::create([
             "name"=>$request->get("name"),

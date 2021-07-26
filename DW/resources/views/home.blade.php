@@ -43,15 +43,4 @@
         </div>
     </div>
 </body>
-
-<script>
-    $(document).on('click', '.button', function(e) {
-        }).success(function(data) {
-        if(!$.trim( $('#alert').html() ).length) {
-        $('#alert').append(`<div class="alert alert-primary" role="alert">
-            Create successfully !
-        </div>`)
-        }
-        });
-</script>
 </html>
