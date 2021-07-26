@@ -17,7 +17,7 @@ class SurveyController extends Controller
             "name.required"=>"Vui lòng nhập tên sinh viên",
             "email.required"=>"Vui lòng nhập email sinh viên",
             "phone.required"=>"Vui lòng nhập số điện thoại của sinh viên",
-            "comment.required"=>"Vui lòng nhập nhận xét : .!",
+            "comment.required"=>"Vui lòng nhập nhận xét :",
         ]);
         Comment::create([
             "name"=>$request->get("name"),
@@ -26,6 +26,6 @@ class SurveyController extends Controller
             "comment"=>$request->get("comment")
         ]);
 
-        return redirect()->back()->with('success','Bạn đã gửi ý kiến thành công.!');
+        return redirect()->back()->with('success','Bạn đã gửi nhận xét thành công.!');
     }
 }
